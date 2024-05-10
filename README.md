@@ -1,3 +1,4 @@
+# **BOYS >> MAKE THIS IN YOUR SAMPLES SO YOU CAN EXTEND THE QUEUEING LIBS**
 # CPE 345 -- Modeling and Simulation Project
 ## Demonstrating the Impact of Accelerated Check In on Queue Times
 
