@@ -1,0 +1,70 @@
+file 157805 1715384414                                          
+version 3
+run General-0-20240510-19:40:08-20540
+attr configname General
+attr datetime 20240510-19:40:08
+attr datetimef 20240510-194008
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network AirportControl
+attr processid 20540
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network AirportControl
+config simtime-resolution s
+config sim-time-limit 1440min
+config **.PrioT_PCT.jobType 0
+config **.PrioT_PCF.jobType 1
+config **.PrioF_PCT.jobType 0
+config **.PrioF_PCF.jobType 1
+config **.PrioT_PCT.interArrivalTime exponential(3min)
+config **.PrioT_PCF.interArrivalTime exponential(3min)
+config **.PrioF_PCT.interArrivalTime exponential(2min)
+config **.PrioF_PCF.interArrivalTime exponential(1min)
+config **.PrioT_Server.serviceTime exponential(45s)
+config **.PrioF_Server3.serviceTime exponential(1min)
+config **.PrioF_Server2.serviceTime exponential(1min)
+config **.PrioF_Server1.serviceTime exponential(1min)
+config **.PrioF_Server0.serviceTime exponential(1min)
+config **.NoPC_Server0.serviceTime exponential(3min)
+config **.NoPC_Server3.serviceTime exponential(3min)
+config **.NoPC_Server2.serviceTime exponential(3min)
+config **.NoPC_Server1.serviceTime exponential(3min)
+config **.PC_Server0.serviceTime exponential(1min)
+config **.PC_Server1.serviceTime exponential(1min)
+config **.sink.keepJobs true
+
+vector 0 AirportControl.PrioF_PQ queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 AirportControl.PrioT_PQ queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 AirportControl.NoPC_PQ queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 3 AirportControl.PC_PQ queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 4 AirportControl.sink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+0	2238 5521 0 27629 0 85172 335 0 4 359 687
+1	7759 15456 0 27943 0 86137 943 0 11 1505 5055
+2	23215 66043 0 28012 0 86329 3768 0 92 208926 13169380
+3	89258 10573 0 27889 0 86012 643 0 5 739 1545
+4	99831 57972 27 28008 213 86325 3062 2 4747 5183998 14995024630
+

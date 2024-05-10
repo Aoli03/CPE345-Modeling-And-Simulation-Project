@@ -1,0 +1,380 @@
+version 3
+run General-0-20240510-19:40:08-20540
+attr configname General
+attr datetime 20240510-19:40:08
+attr datetimef 20240510-194008
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network AirportControl
+attr processid 20540
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network AirportControl
+config simtime-resolution s
+config sim-time-limit 1440min
+config **.PrioT_PCT.jobType 0
+config **.PrioT_PCF.jobType 1
+config **.PrioF_PCT.jobType 0
+config **.PrioF_PCF.jobType 1
+config **.PrioT_PCT.interArrivalTime exponential(3min)
+config **.PrioT_PCF.interArrivalTime exponential(3min)
+config **.PrioF_PCT.interArrivalTime exponential(2min)
+config **.PrioF_PCF.interArrivalTime exponential(1min)
+config **.PrioT_Server.serviceTime exponential(45s)
+config **.PrioF_Server3.serviceTime exponential(1min)
+config **.PrioF_Server2.serviceTime exponential(1min)
+config **.PrioF_Server1.serviceTime exponential(1min)
+config **.PrioF_Server0.serviceTime exponential(1min)
+config **.NoPC_Server0.serviceTime exponential(3min)
+config **.NoPC_Server3.serviceTime exponential(3min)
+config **.NoPC_Server2.serviceTime exponential(3min)
+config **.NoPC_Server1.serviceTime exponential(3min)
+config **.PC_Server0.serviceTime exponential(1min)
+config **.PC_Server1.serviceTime exponential(1min)
+config **.sink.keepJobs true
+
+par AirportControl.PrioT_PCT typename "\"org.omnetpp.queueing.Source\""
+par AirportControl.PrioT_PCT numJobs -1
+par AirportControl.PrioT_PCT interArrivalTime exponential(3min)
+attr unit s
+par AirportControl.PrioT_PCT jobName "\"job\""
+par AirportControl.PrioT_PCT jobType 0
+par AirportControl.PrioT_PCT jobPriority 0
+par AirportControl.PrioT_PCT startTime 143.257s
+attr unit s
+par AirportControl.PrioT_PCT stopTime -1s
+attr unit s
+scalar AirportControl.PrioT_PCT created:last 466
+attr interpolationmode none
+attr recordingmode last
+attr title "the number of jobs created, last"
+par AirportControl.PrioT_PCF typename "\"org.omnetpp.queueing.Source\""
+par AirportControl.PrioT_PCF numJobs -1
+par AirportControl.PrioT_PCF interArrivalTime exponential(3min)
+attr unit s
+par AirportControl.PrioT_PCF jobName "\"job\""
+par AirportControl.PrioT_PCF jobType 1
+par AirportControl.PrioT_PCF jobPriority 0
+par AirportControl.PrioT_PCF startTime 161.741s
+attr unit s
+par AirportControl.PrioT_PCF stopTime -1s
+attr unit s
+scalar AirportControl.PrioT_PCF created:last 464
+attr interpolationmode none
+attr recordingmode last
+attr title "the number of jobs created, last"
+par AirportControl.PrioF_PCT typename "\"org.omnetpp.queueing.Source\""
+par AirportControl.PrioF_PCT numJobs -1
+par AirportControl.PrioF_PCT interArrivalTime exponential(2min)
+attr unit s
+par AirportControl.PrioF_PCT jobName "\"job\""
+par AirportControl.PrioF_PCT jobType 0
+par AirportControl.PrioF_PCT jobPriority 0
+par AirportControl.PrioF_PCT startTime 150.712s
+attr unit s
+par AirportControl.PrioF_PCT stopTime -1s
+attr unit s
+scalar AirportControl.PrioF_PCT created:last 732
+attr interpolationmode none
+attr recordingmode last
+attr title "the number of jobs created, last"
+par AirportControl.PrioF_PCF typename "\"org.omnetpp.queueing.Source\""
+par AirportControl.PrioF_PCF numJobs -1
+par AirportControl.PrioF_PCF interArrivalTime exponential(1min)
+attr unit s
+par AirportControl.PrioF_PCF jobName "\"job\""
+par AirportControl.PrioF_PCF jobType 1
+par AirportControl.PrioF_PCF jobPriority 0
+par AirportControl.PrioF_PCF startTime 111.576s
+attr unit s
+par AirportControl.PrioF_PCF stopTime -1s
+attr unit s
+scalar AirportControl.PrioF_PCF created:last 1477
+attr interpolationmode none
+attr recordingmode last
+attr title "the number of jobs created, last"
+par AirportControl.Precheck_Classifier typename "\"org.omnetpp.queueing.Classifier\""
+par AirportControl.Precheck_Classifier dispatchField "\"type\""
+attr enum type,priority
+par AirportControl.sink typename "\"org.omnetpp.queueing.Sink\""
+par AirportControl.sink keepJobs true
+scalar AirportControl.sink generation:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the generation of the arrived jobs, mean"
+scalar AirportControl.sink generation:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the generation of the arrived jobs, max"
+scalar AirportControl.sink delaysVisited:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of delays visited by arrived jobs, mean"
+scalar AirportControl.sink delaysVisited:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of delays visited by arrived jobs, max"
+scalar AirportControl.sink queuesVisited:mean 1.8256041802743
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of queues visited by arrived jobs, mean"
+scalar AirportControl.sink queuesVisited:max 4
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of queues visited by arrived jobs, max"
+scalar AirportControl.sink totalServiceTime:mean 191.62638798171
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent  by arrived jobs, mean"
+attr unit s
+scalar AirportControl.sink totalServiceTime:max 1845
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent  by arrived jobs, max"
+attr unit s
+scalar AirportControl.sink totalDelayTime:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in delay nodes by arrived jobs, mean"
+attr unit s
+scalar AirportControl.sink totalDelayTime:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in delay nodes by arrived jobs, max"
+attr unit s
+scalar AirportControl.sink totalQueueingTime:mean 1501.3840627041
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in queues by arrived jobs, mean"
+attr unit s
+scalar AirportControl.sink totalQueueingTime:max 4018
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in queues by arrived jobs, max"
+attr unit s
+scalar AirportControl.sink lifeTime:mean 1693.0104506858
+attr interpolationmode none
+attr recordingmode mean
+attr title "lifetime of arrived jobs, mean"
+attr unit s
+scalar AirportControl.sink lifeTime:max 4747
+attr interpolationmode none
+attr recordingmode max
+attr title "lifetime of arrived jobs, max"
+attr unit s
+par AirportControl.PrioF_PQ typename "\"org.omnetpp.queueing.PassiveQueue\""
+par AirportControl.PrioF_PQ capacity -1
+par AirportControl.PrioF_PQ fifo true
+par AirportControl.PrioF_PQ sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar AirportControl.PrioF_PQ queueingTime:mean 20.766467065868
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar AirportControl.PrioF_PQ queueingTime:max 80
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar AirportControl.PrioF_PQ queueLength:timeavg 0.040138888888889
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar AirportControl.PrioF_PQ queueLength:max 4
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar AirportControl.PrioF_PQ dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par AirportControl.PrioF_Server0 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioF_Server0 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioF_Server0 serviceTime exponential(1min)
+attr unit s
+scalar AirportControl.PrioF_Server0 busy:timeavg 0.46368055555556
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioF_Server3 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioF_Server3 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioF_Server3 serviceTime exponential(1min)
+attr unit s
+scalar AirportControl.PrioF_Server3 busy:timeavg 0.14561342592593
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioF_Server2 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioF_Server2 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioF_Server2 serviceTime exponential(1min)
+attr unit s
+scalar AirportControl.PrioF_Server2 busy:timeavg 0.29702546296296
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioF_Server1 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioF_Server1 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioF_Server1 serviceTime exponential(1min)
+attr unit s
+scalar AirportControl.PrioF_Server1 busy:timeavg 0.61446759259259
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioT_PQ typename "\"org.omnetpp.queueing.PassiveQueue\""
+par AirportControl.PrioT_PQ capacity -1
+par AirportControl.PrioT_PQ fifo true
+par AirportControl.PrioT_PQ sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar AirportControl.PrioT_PQ queueingTime:mean 94.450106157113
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar AirportControl.PrioT_PQ queueingTime:max 497
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar AirportControl.PrioT_PQ queueLength:timeavg 0.51488425925926
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar AirportControl.PrioT_PQ queueLength:max 11
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar AirportControl.PrioT_PQ dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par AirportControl.NoPC_PQ typename "\"org.omnetpp.queueing.PassiveQueue\""
+par AirportControl.NoPC_PQ capacity -1
+par AirportControl.NoPC_PQ fifo true
+par AirportControl.NoPC_PQ sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar AirportControl.NoPC_PQ queueingTime:mean 2460.9588744589
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar AirportControl.NoPC_PQ queueingTime:max 3971
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar AirportControl.NoPC_PQ queueLength:timeavg 54.101597222222
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar AirportControl.NoPC_PQ queueLength:max 92
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar AirportControl.NoPC_PQ dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par AirportControl.NoPC_Server0 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.NoPC_Server0 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.NoPC_Server0 serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.NoPC_Server0 busy:timeavg 0.99508101851852
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.NoPC_Server3 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.NoPC_Server3 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.NoPC_Server3 serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.NoPC_Server3 busy:timeavg 0.9924537037037
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.NoPC_Server2 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.NoPC_Server2 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.NoPC_Server2 serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.NoPC_Server2 busy:timeavg 0.9927662037037
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.NoPC_Server1 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.NoPC_Server1 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.NoPC_Server1 serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.NoPC_Server1 busy:timeavg 0.99530092592593
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PC_PQ typename "\"org.omnetpp.queueing.PassiveQueue\""
+par AirportControl.PC_PQ capacity -1
+par AirportControl.PC_PQ fifo true
+par AirportControl.PC_PQ sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar AirportControl.PC_PQ queueingTime:mean 51.881619937695
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar AirportControl.PC_PQ queueingTime:max 249
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar AirportControl.PC_PQ queueLength:timeavg 0.19275462962963
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar AirportControl.PC_PQ queueLength:max 5
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar AirportControl.PC_PQ dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par AirportControl.PC_Server0 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PC_Server0 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PC_Server0 serviceTime exponential(1min)
+attr unit s
+scalar AirportControl.PC_Server0 busy:timeavg 0.51065972222222
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PC_Server1 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PC_Server1 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PC_Server1 serviceTime exponential(1min)
+attr unit s
+scalar AirportControl.PC_Server1 busy:timeavg 0.34672453703704
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioT_Server typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioT_Server fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioT_Server serviceTime exponential(45s)
+attr unit s
+scalar AirportControl.PrioT_Server busy:timeavg 0.49118055555556
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl typename "\"AirportControl\""
+
