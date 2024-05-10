@@ -58,88 +58,70 @@ network PriorityQueueing
     @display("bgb=1245,615");
     submodules:
         PrioT_PCT: Source {
-            @display("p=59,191");
+            @display("p=53,251");
         }
         PrioT_PCF: Source {
-            @display("p=59,256");
+            @display("p=53,316");
         }
         PriorityCheckIn_Classifier: Classifier {
-            @display("p=177,278;is=l");
+            @display("p=170,352;is=l");
         }
         PrioT_Router: Router {
-            @display("p=278,213");
+            @display("p=278,196");
         }
         PrioF_Router: Router {
-            @display("p=278,407");
-        }
-        Bagging_Router: Router {
-            @display("p=866,283");
-        }
-        PrioT_Q0: Queue {
-            @display("p=396,126");
+            @display("p=278,352");
         }
         PrioT_Q1: Queue {
-            @display("p=396,191");
+            @display("p=396,196");
         }
         PrioF_Q0: Queue {
-            @display("p=396,304");
+            @display("p=396,283");
         }
         PrioF_Q1: Queue {
-            @display("p=396,368");
+            @display("p=396,347");
         }
         PrioF_Q2: Queue {
-            @display("p=396,431");
+            @display("p=396,410");
         }
         PrioF_Q3: Queue {
-            @display("p=396,490");
-        }
-        Bag_Q0: Queue {
-            @display("p=983,191");
-        }
-        Bag_Q1: Queue {
-            @display("p=983,252");
-        }
-        Bag_Q2: Queue {
-            @display("p=983,312");
-        }
-        Bag_Q3: Queue {
-            @display("p=983,378");
+            @display("p=396,469");
         }
         PrioF_PCT: Source {
-            @display("p=59,319");
+            @display("p=53,379");
         }
         PrioF_PCF: Source {
-            @display("p=59,382");
+            @display("p=53,442");
         }
         PCF_Router: Router {
-            @display("p=633,407");
+            @display("p=632,421");
         }
         Precheck_Classifier: Classifier {
-            @display("p=548,283;is=l");
+            @display("p=536,352;is=l");
         }
         PCT_Router: Router {
-            @display("p=633,174");
+            @display("p=632,218");
         }
         PCT_Q0: Queue {
-            @display("p=735,131");
+            @display("p=734,179");
         }
         PCT_Q1: Queue {
-            @display("p=735,196");
+            @display("p=734,244");
         }
         PCF_Q0: Queue {
-            @display("p=735,309");
+            @display("p=734,318");
         }
         PCF_Q1: Queue {
-            @display("p=735,373");
+            @display("p=734,382");
         }
         PCF_Q2: Queue {
-            @display("p=735,436");
+            @display("p=734,445");
         }
         PCF_Q3: Queue {
-            @display("p=735,495");
+            @display("p=734,504");
         }
         sink: Sink {
-            @display("p=1178,283");
+            @display("p=864,318");
         }
     connections:
         PrioT_PCT.out --> IdealChannel --> PriorityCheckIn_Classifier.in++;
@@ -148,7 +130,6 @@ network PriorityQueueing
         PrioF_PCF.out --> IdealChannel --> PriorityCheckIn_Classifier.in++;
         PriorityCheckIn_Classifier.out++ --> IdealChannel --> PrioT_Router.in++;
         PriorityCheckIn_Classifier.rest --> IdealChannel --> PrioF_Router.in++;
-        PrioT_Router.out++ --> IdealChannel --> PrioT_Q0.in++;
         PrioT_Router.out++ --> IdealChannel --> PrioT_Q1.in++;
         PrioF_Router.out++ --> IdealChannel --> PrioF_Q0.in++;
         PrioF_Router.out++ --> IdealChannel --> PrioF_Q1.in++;
@@ -156,7 +137,6 @@ network PriorityQueueing
         PrioF_Router.out++ --> IdealChannel --> PrioF_Q3.in++;
         PrioF_Q0.out --> IdealChannel --> Precheck_Classifier.in++;
         PrioT_Q1.out --> IdealChannel --> Precheck_Classifier.in++;
-        PrioT_Q0.out --> IdealChannel --> Precheck_Classifier.in++;
         PrioF_Q1.out --> IdealChannel --> Precheck_Classifier.in++;
         PrioF_Q2.out --> IdealChannel --> Precheck_Classifier.in++;
         PrioF_Q3.out --> IdealChannel --> Precheck_Classifier.in++;
@@ -168,8 +148,10 @@ network PriorityQueueing
         PCF_Router.out++ --> IdealChannel --> PCF_Q1.in++;
         PCF_Router.out++ --> IdealChannel --> PCF_Q2.in++;
         PCF_Router.out++ --> IdealChannel --> PCF_Q3.in++;
-        Bagging_Router.out++ --> IdealChannel --> Bag_Q0.in++;
-        Bagging_Router.out++ --> IdealChannel --> Bag_Q1.in++;
-        Bagging_Router.out++ --> IdealChannel --> Bag_Q2.in++;
-        Bagging_Router.out++ --> IdealChannel --> Bag_Q3.in++;
+        PCT_Q0.out --> IdealChannel --> sink.in++;
+        PCT_Q1.out --> IdealChannel --> sink.in++;
+        PCF_Q0.out --> IdealChannel --> sink.in++;
+        PCF_Q1.out --> IdealChannel --> sink.in++;
+        PCF_Q2.out --> IdealChannel --> sink.in++;
+        PCF_Q3.out --> IdealChannel --> sink.in++;
 }
