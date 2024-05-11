@@ -1,9 +1,9 @@
-file 157805 1715384414                                          
+file 6679450 1715397532                                         
 version 3
-run General-0-20240510-19:40:08-20540
+run General-0-20240510-23:18:29-23340
 attr configname General
-attr datetime 20240510-19:40:08
-attr datetimef 20240510-194008
+attr datetime 20240510-23:18:29
+attr datetimef 20240510-231829
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,7 +11,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network AirportControl
-attr processid 20540
+attr processid 23340
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -22,24 +22,23 @@ config simtime-resolution s
 config sim-time-limit 1440min
 config **.PrioT_PCT.jobType 0
 config **.PrioT_PCF.jobType 1
-config **.PrioF_PCT.jobType 0
-config **.PrioF_PCF.jobType 1
-config **.PrioT_PCT.interArrivalTime exponential(3min)
-config **.PrioT_PCF.interArrivalTime exponential(3min)
-config **.PrioF_PCT.interArrivalTime exponential(2min)
-config **.PrioF_PCF.interArrivalTime exponential(1min)
-config **.PrioT_Server.serviceTime exponential(45s)
-config **.PrioF_Server3.serviceTime exponential(1min)
-config **.PrioF_Server2.serviceTime exponential(1min)
-config **.PrioF_Server1.serviceTime exponential(1min)
-config **.PrioF_Server0.serviceTime exponential(1min)
-config **.NoPC_Server0.serviceTime exponential(3min)
-config **.NoPC_Server3.serviceTime exponential(3min)
-config **.NoPC_Server2.serviceTime exponential(3min)
-config **.NoPC_Server1.serviceTime exponential(3min)
-config **.PC_Server0.serviceTime exponential(1min)
-config **.PC_Server1.serviceTime exponential(1min)
-config **.sink.keepJobs true
+config **.PrioF_PCT.jobType 2
+config **.PrioF_PCF.jobType 3
+config **.PrioT_PCT.interArrivalTime exponential(3s)
+config **.PrioT_PCF.interArrivalTime exponential(3s)
+config **.PrioF_PCT.interArrivalTime exponential(2s)
+config **.PrioF_PCF.interArrivalTime exponential(1s)
+config **.PrioT_Server.serviceTime exponential(0.45s)
+config **.PrioF_Server3.serviceTime exponential(1s)
+config **.PrioF_Server2.serviceTime exponential(1s)
+config **.PrioF_Server1.serviceTime exponential(1s)
+config **.PrioF_Server0.serviceTime exponential(1s)
+config **.NoPC_Server0.serviceTime exponential(2s)
+config **.NoPC_Server3.serviceTime exponential(2s)
+config **.NoPC_Server2.serviceTime exponential(2s)
+config **.NoPC_Server1.serviceTime exponential(2s)
+config **.PC_Server0.serviceTime exponential(1s)
+config **.PC_Server1.serviceTime exponential(1s)
 
 vector 0 AirportControl.PrioF_PQ queueLength:vector ETV
 attr interpolationmode sample-hold
@@ -62,9 +61,17 @@ attr interpolationmode none
 attr recordingmode vector
 attr title "lifetime of arrived jobs"
 attr unit s
-0	2238 5521 0 27629 0 85172 335 0 4 359 687
-1	7759 15456 0 27943 0 86137 943 0 11 1505 5055
-2	23215 66043 0 28012 0 86329 3768 0 92 208926 13169380
-3	89258 10573 0 27889 0 86012 643 0 5 739 1545
-4	99831 57972 27 28008 213 86325 3062 2 4747 5183998 14995024630
+4	2182 553401 16 294941 3 14561 32768 0 23 98304 489170
+4	555583 590582 294944 589883 14561 29332 32768 0 24 99980 506316
+2	1146165 574708 0 673386 0 33516 32768 0 21 92096 494696
+4	1720873 590572 589892 884768 29332 44211 32768 0 21 99813 501711
+4	2311445 610538 884771 1179696 44211 58966 32768 0 27 100106 503732
+2	2921983 608492 673390 1344696 33516 67240 32768 0 26 106344 707072
+1	3530475 591160 0 1389180 0 69498 32768 0 7 30770 55924
+4	4121635 623534 1179705 1474598 58966 73751 32768 0 24 102031 535857
+0	4745169 411913 0 1727895 0 86393 22605 0 13 28244 75558
+1	5157082 159657 1389198 1728082 69499 86400 8403 0 6 7923 14413
+2	5316739 348246 1344708 1728058 67241 86399 18293 0 24 52730 301798
+3	5664985 478666 0 1728030 0 86398 26227 0 11 30697 72545
+4	6143651 535797 1474611 1728096 73751 86400 28168 0 25 84681 424619
 

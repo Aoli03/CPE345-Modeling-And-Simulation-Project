@@ -8,12 +8,22 @@ import org.omnetpp.queueing.Classifier;
 import org.omnetpp.queueing.Router;
 import org.omnetpp.queueing.PassiveQueue;
 
+simple MySourceExt extends Source
+{
+    @class(MySourceExt);
+}
+
+simple MySinkExt extends Sink
+{
+    @class(MySinkExt);
+}
+
 simple Classifier
 {
     parameters:
         @group(Queueing);
         @display("i=block/classifier");
-        string dispatchField @enum("type","priority") = default("type");
+        string dispatchField @enum("type","priority") = "type";
     gates:
         input in[];
         output out[];
@@ -57,41 +67,41 @@ network AirportControl
 {
     @display("bgb=2024.9413,989.8325");
     submodules:
-        PrioT_PCT: Source {
-            @display("p=483.00003,205.50002");
+        PrioT_PCT: MySourceExt {
+            @display("p=273.00003,207.00002");
         }
-        PrioT_PCF: Source {
-            @display("p=483.00003,304.50003");
+        PrioT_PCF: MySourceExt {
+            @display("p=273.00003,306.00003");
         }
-        PrioF_PCT: Source {
-            @display("p=483.00003,492.00003");
+        PrioF_PCT: MySourceExt {
+            @display("p=273.00003,493.50003");
         }
-        PrioF_PCF: Source {
-            @display("p=483.00003,589.50006");
+        PrioF_PCF: MySourceExt {
+            @display("p=273.00003,591.00006");
         }
         Precheck_Classifier: Classifier {
-            @display("p=1102.5001,448.50003;is=l");
+            @display("p=892.50006,450.00003;is=l");
         }
-        sink: Sink {
+        sink: MySinkExt {
             @display("p=1618.5001,492.00003");
         }
         PrioF_PQ: PassiveQueue {
-            @display("p=651.00006,531.00006");
+            @display("p=441.00003,532.50006");
         }
         PrioF_Server0: Server {
-            @display("p=840.00006,390.00003");
+            @display("p=630.00006,391.50003");
         }
         PrioF_Server3: Server {
-            @display("p=840.00006,738.00006");
+            @display("p=630.00006,739.50006");
         }
         PrioF_Server2: Server {
-            @display("p=840.00006,622.50006");
+            @display("p=630.00006,624.00006");
         }
         PrioF_Server1: Server {
-            @display("p=840.00006,508.50003");
+            @display("p=630.00006,510.00003");
         }
         PrioT_PQ: PassiveQueue {
-            @display("p=682.50006,243.00002");
+            @display("p=472.50003,244.50002");
         }
         NoPC_PQ: PassiveQueue {
             @display("p=1237.5001,601.50006");
@@ -118,7 +128,7 @@ network AirportControl
             @display("p=1375.5001,304.50003");
         }
         PrioT_Server: Server {
-            @display("p=840.00006,243.00002");
+            @display("p=630.00006,244.50002");
         }
     connections:
         PrioT_PQ.out++ --> PrioT_Server.in++;
@@ -127,8 +137,10 @@ network AirportControl
         PrioF_Server2.out --> Precheck_Classifier.in++;
         PrioF_Server1.out --> Precheck_Classifier.in++;
         PrioF_Server3.out --> Precheck_Classifier.in++;
-        Precheck_Classifier.out++ --> PC_PQ.in++;
-        Precheck_Classifier.rest --> NoPC_PQ.in++;
+        Precheck_Classifier.out++ --> PC_PQ.in++; // JobType = 0, Online Check-In, TSA Precheck
+        Precheck_Classifier.out++ --> NoPC_PQ.in++; // JobType = 1, Online Check-In, No Precheck
+        Precheck_Classifier.out++ --> PC_PQ.in++; // JobType = 2, Manual Check-In, TSA Precheck
+		Precheck_Classifier.rest --> NoPC_PQ.in++; // rest = 4, Manual Check-In, No Precheck (Most Common)
         PrioT_PCT.out --> PrioT_PQ.in++;
         PrioT_PCF.out --> PrioT_PQ.in++;
         PrioF_PCT.out --> PrioF_PQ.in++;
@@ -149,4 +161,5 @@ network AirportControl
         NoPC_Server1.out --> sink.in++;
         NoPC_Server2.out --> sink.in++;
         NoPC_Server3.out --> sink.in++;
+        
 }
