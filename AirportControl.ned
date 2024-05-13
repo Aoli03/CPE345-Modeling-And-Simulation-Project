@@ -1,4 +1,3 @@
-import ned.IdealChannel;
 //Imports
 import org.omnetpp.queueing.Sink;
 import org.omnetpp.queueing.Queue;
@@ -6,6 +5,7 @@ import org.omnetpp.queueing.Server;
 import org.omnetpp.queueing.Classifier;
 import org.omnetpp.queueing.Router;
 import org.omnetpp.queueing.PassiveQueue;
+import ned.IdealChannel;
 
 simple Source
 {

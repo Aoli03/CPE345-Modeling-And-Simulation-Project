@@ -16,17 +16,6 @@ protected:
     cHistogram PCT_Hist;
     cHistogram Overall_Hist;
 
-    //We may not need this
-//    cStdDev PrioT_PCT_Stats;
-//    cStdDev PrioT_PCF_Stats;
-//    cStdDev PrioF_PCT_Stats;
-//    cStdDev PrioF_PCF_Stats;
-//    cStdDev PrioF_Stats;
-//    cStdDev PrioT_Stats;
-//    cStdDev PCF_Stats;
-//    cStdDev PCT_Stats;
-//    cStdDev Overall_Stats;
-
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
     virtual void finish();

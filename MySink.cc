@@ -1,5 +1,4 @@
 #include "MySinkExt.h"
-
 Define_Module(MySinkExt);
 void MySinkExt::initialize(){
     PrioT_PCT_Hist.setName("PrioT_PCT_Hist");
@@ -15,7 +14,6 @@ void MySinkExt::initialize(){
 }
 void MySinkExt::handleMessage(cMessage *msg){
     int jobType = msg->getKind();
-
     simtime_t delay = simTime()-msg -> getTimestamp();
 
     // jobType = 0, Online Check-In, TSA Precheck
@@ -59,3 +57,5 @@ void MySinkExt::finish(){
     Overall_Hist.record();
     Sink::finish();
 }
+
+
