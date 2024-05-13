@@ -1,0 +1,1111 @@
+version 3
+run General-4-20240513-00:14:45-20028
+attr configname General
+attr datetime 20240513-00:14:45
+attr datetimef 20240513-001445
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network AirportControl
+attr processid 20028
+attr repetition 4
+attr replication #4
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+config network AirportControl
+config repeat 10
+config simtime-resolution s
+config sim-time-limit 1440min
+config **.PrioT_PCT.jobType 0
+config **.PrioT_PCF.jobType 1
+config **.PrioF_PCT.jobType 2
+config **.PrioF_PCF.jobType 3
+config **.PrioT_PCT.probArrival 0.04
+config **.PrioT_PCF.probArrival 0.01
+config **.PrioF_PCT.probArrival 0.01
+config **.PrioF_PCF.probArrival 0.94
+config **.PrioT_PCT.interarrivalRateRush 0.4min
+config **.PrioT_PCF.interarrivalRateRush 0.4min
+config **.PrioF_PCT.interarrivalRateRush 0.4min
+config **.PrioF_PCF.interarrivalRateRush 0.4min
+config **.PrioF_PCF.interarrivalRateNormal 1min
+config **.PrioT_PCT.interarrivalRateNormal 1min
+config **.PrioF_PCT.interarrivalRateNormal 1min
+config **.PrioT_PCF.interarrivalRateNormal 1min
+config **.PrioF_PCF.numberOfPeaks 4
+config **.PrioF_PCT.numberOfPeaks 4
+config **.PrioT_PCF.numberOfPeaks 4
+config **.PrioT_PCT.numberOfPeaks 4
+config **.PrioF_PCF.durationOfPeaks 150min
+config **.PrioF_PCT.durationOfPeaks 150min
+config **.PrioT_PCF.durationOfPeaks 150min
+config **.PrioT_PCT.durationOfPeaks 150min
+config **.PrioT_Server.serviceTime exponential(3min)
+config **.PrioF_Server3.serviceTime exponential(5min)
+config **.PrioF_Server2.serviceTime exponential(5min)
+config **.PrioF_Server1.serviceTime exponential(5min)
+config **.PrioF_Server0.serviceTime exponential(5min)
+config **.NoPC_Server0.serviceTime exponential(3min)
+config **.NoPC_Server3.serviceTime exponential(3min)
+config **.NoPC_Server2.serviceTime exponential(3min)
+config **.NoPC_Server1.serviceTime exponential(3min)
+config **.PC_Server0.serviceTime exponential(1min)
+config **.PC_Server1.serviceTime exponential(1min)
+
+par AirportControl.PrioT_PCT typename "\"Source\""
+par AirportControl.PrioT_PCT jobType 0
+par AirportControl.PrioT_PCT probArrival 0.04
+par AirportControl.PrioT_PCT interarrivalRateRush 24s
+attr unit s
+par AirportControl.PrioT_PCT interarrivalRateNormal 60s
+attr unit s
+par AirportControl.PrioT_PCT numberOfPeaks 4
+par AirportControl.PrioT_PCT durationOfPeaks 9000s
+attr unit s
+par AirportControl.PrioT_PCF typename "\"Source\""
+par AirportControl.PrioT_PCF jobType 1
+par AirportControl.PrioT_PCF probArrival 0.01
+par AirportControl.PrioT_PCF interarrivalRateRush 24s
+attr unit s
+par AirportControl.PrioT_PCF interarrivalRateNormal 60s
+attr unit s
+par AirportControl.PrioT_PCF numberOfPeaks 4
+par AirportControl.PrioT_PCF durationOfPeaks 9000s
+attr unit s
+par AirportControl.PrioF_PCT typename "\"Source\""
+par AirportControl.PrioF_PCT jobType 2
+par AirportControl.PrioF_PCT probArrival 0.01
+par AirportControl.PrioF_PCT interarrivalRateRush 24s
+attr unit s
+par AirportControl.PrioF_PCT interarrivalRateNormal 60s
+attr unit s
+par AirportControl.PrioF_PCT numberOfPeaks 4
+par AirportControl.PrioF_PCT durationOfPeaks 9000s
+attr unit s
+par AirportControl.PrioF_PCF typename "\"Source\""
+par AirportControl.PrioF_PCF jobType 3
+par AirportControl.PrioF_PCF probArrival 0.94
+par AirportControl.PrioF_PCF interarrivalRateRush 24s
+attr unit s
+par AirportControl.PrioF_PCF interarrivalRateNormal 60s
+attr unit s
+par AirportControl.PrioF_PCF numberOfPeaks 4
+par AirportControl.PrioF_PCF durationOfPeaks 9000s
+attr unit s
+par AirportControl.Precheck_Classifier typename "\"org.omnetpp.queueing.Classifier\""
+par AirportControl.Precheck_Classifier dispatchField "\"type\""
+attr enum type,priority
+par AirportControl.sink typename "\"MySinkExt\""
+par AirportControl.sink keepJobs false
+statistic AirportControl.sink PrioT_PCT_Hist
+field count 58
+field mean 70.948275862069
+field stddev 69.976041617713
+field min 2
+field max 406
+field sum 4115
+field sqrsum 571061
+bin	-inf	0
+bin	0	6
+bin	10	7
+bin	20	4
+bin	30	4
+bin	40	6
+bin	50	3
+bin	60	3
+bin	70	6
+bin	80	3
+bin	90	2
+bin	100	4
+bin	110	4
+bin	120	0
+bin	130	0
+bin	140	1
+bin	150	1
+bin	160	0
+bin	170	1
+bin	180	0
+bin	190	0
+bin	200	0
+bin	210	0
+bin	220	1
+bin	230	0
+bin	240	0
+bin	250	0
+bin	260	0
+bin	270	1
+bin	280	0
+bin	290	0
+bin	300	0
+bin	310	0
+bin	320	0
+bin	330	0
+bin	340	0
+bin	350	0
+bin	360	0
+bin	370	0
+bin	380	0
+bin	390	0
+bin	400	1
+bin	410	0
+bin	420	0
+bin	430	0
+bin	440	0
+bin	450	0
+bin	460	0
+bin	470	0
+bin	480	0
+bin	490	0
+bin	500	0
+bin	510	0
+statistic AirportControl.sink PrioT_PCF_Hist
+field count 15
+field mean 199.26666666667
+field stddev 201.82363823988
+field min 15
+field max 659
+field sum 2989
+field sqrsum 1165867
+bin	-inf	0
+bin	0	0
+bin	10	2
+bin	20	0
+bin	30	0
+bin	40	0
+bin	50	0
+bin	60	0
+bin	70	1
+bin	80	3
+bin	90	1
+bin	100	1
+bin	110	0
+bin	120	0
+bin	130	0
+bin	140	0
+bin	150	0
+bin	160	1
+bin	170	1
+bin	180	0
+bin	190	0
+bin	200	0
+bin	210	2
+bin	220	0
+bin	230	0
+bin	240	0
+bin	250	0
+bin	260	0
+bin	270	0
+bin	280	0
+bin	290	0
+bin	300	0
+bin	310	0
+bin	320	0
+bin	330	0
+bin	340	0
+bin	350	0
+bin	360	0
+bin	370	1
+bin	380	0
+bin	390	0
+bin	400	0
+bin	410	0
+bin	420	0
+bin	430	0
+bin	440	0
+bin	450	0
+bin	460	0
+bin	470	0
+bin	480	0
+bin	490	0
+bin	500	0
+bin	510	0
+bin	520	0
+bin	530	0
+bin	540	0
+bin	550	0
+bin	560	0
+bin	570	0
+bin	580	0
+bin	590	0
+bin	600	0
+bin	610	0
+bin	620	1
+bin	630	0
+bin	640	0
+bin	650	1
+bin	660	0
+bin	670	0
+bin	680	0
+bin	690	0
+bin	700	0
+bin	710	0
+bin	720	0
+bin	730	0
+bin	740	0
+bin	750	0
+bin	760	0
+bin	770	0
+bin	780	0
+bin	790	0
+bin	800	0
+bin	810	0
+bin	820	0
+statistic AirportControl.sink PrioF_PCT_Hist
+field count 12
+field mean 42.166666666667
+field stddev 42.187532267103
+field min 1
+field max 156
+field sum 506
+field sqrsum 40914
+bin	-inf	0
+bin	0	1
+bin	2	0
+bin	4	0
+bin	6	1
+bin	8	0
+bin	10	0
+bin	12	1
+bin	14	0
+bin	16	0
+bin	18	2
+bin	20	0
+bin	22	1
+bin	24	0
+bin	26	0
+bin	28	0
+bin	30	0
+bin	32	0
+bin	34	0
+bin	36	1
+bin	38	0
+bin	40	0
+bin	42	1
+bin	44	0
+bin	46	0
+bin	48	0
+bin	50	0
+bin	52	0
+bin	54	0
+bin	56	1
+bin	58	0
+bin	60	1
+bin	62	0
+bin	64	0
+bin	66	0
+bin	68	0
+bin	70	1
+bin	72	0
+bin	74	0
+bin	76	0
+bin	78	0
+bin	80	0
+bin	82	0
+bin	84	0
+bin	86	0
+bin	88	0
+bin	90	0
+bin	92	0
+bin	94	0
+bin	96	0
+bin	98	0
+bin	100	0
+bin	102	0
+bin	104	0
+bin	106	0
+bin	108	0
+bin	110	0
+bin	112	0
+bin	114	0
+bin	116	0
+bin	118	0
+bin	120	0
+bin	122	0
+bin	124	0
+bin	126	0
+bin	128	0
+bin	130	0
+bin	132	0
+bin	134	0
+bin	136	0
+bin	138	0
+bin	140	0
+bin	142	0
+bin	144	0
+bin	146	0
+bin	148	0
+bin	150	0
+bin	152	0
+bin	154	0
+bin	156	1
+bin	158	0
+bin	160	0
+bin	162	0
+bin	164	0
+bin	166	0
+bin	168	0
+bin	170	0
+bin	172	0
+bin	174	0
+bin	176	0
+bin	178	0
+bin	180	0
+bin	182	0
+bin	184	0
+bin	186	0
+bin	188	0
+bin	190	0
+bin	192	0
+bin	194	0
+bin	196	0
+statistic AirportControl.sink PrioF_PCF_Hist
+field count 1095
+field mean 220.6200913242
+field stddev 199.91530189645
+field min 0
+field max 1388
+field sum 241579
+field sqrsum 97020125
+bin	-inf	0
+bin	0	88
+bin	20	70
+bin	40	79
+bin	60	64
+bin	80	66
+bin	100	50
+bin	120	58
+bin	140	48
+bin	160	41
+bin	180	53
+bin	200	46
+bin	220	46
+bin	240	29
+bin	260	40
+bin	280	32
+bin	300	23
+bin	320	28
+bin	340	29
+bin	360	24
+bin	380	13
+bin	400	11
+bin	420	19
+bin	440	10
+bin	460	14
+bin	480	10
+bin	500	11
+bin	520	12
+bin	540	12
+bin	560	3
+bin	580	8
+bin	600	7
+bin	620	2
+bin	640	7
+bin	660	3
+bin	680	7
+bin	700	4
+bin	720	3
+bin	740	2
+bin	760	1
+bin	780	2
+bin	800	2
+bin	820	1
+bin	840	2
+bin	860	0
+bin	880	2
+bin	900	0
+bin	920	1
+bin	940	1
+bin	960	1
+bin	980	2
+bin	1000	2
+bin	1020	0
+bin	1040	0
+bin	1060	1
+bin	1080	1
+bin	1100	1
+bin	1120	1
+bin	1140	0
+bin	1160	0
+bin	1180	0
+bin	1200	0
+bin	1220	0
+bin	1240	0
+bin	1260	0
+bin	1280	0
+bin	1300	0
+bin	1320	1
+bin	1340	0
+bin	1360	0
+bin	1380	1
+bin	1400	0
+statistic AirportControl.sink PrioF_Hist
+field count 1107
+field mean 218.68563685637
+field stddev 199.72976001545
+field min 0
+field max 1388
+field sum 242085
+field sqrsum 97061039
+bin	-inf	0
+bin	0	93
+bin	20	72
+bin	40	81
+bin	60	66
+bin	80	66
+bin	100	50
+bin	120	58
+bin	140	49
+bin	160	41
+bin	180	53
+bin	200	46
+bin	220	46
+bin	240	29
+bin	260	40
+bin	280	32
+bin	300	23
+bin	320	28
+bin	340	29
+bin	360	24
+bin	380	13
+bin	400	11
+bin	420	19
+bin	440	10
+bin	460	14
+bin	480	10
+bin	500	11
+bin	520	12
+bin	540	12
+bin	560	3
+bin	580	8
+bin	600	7
+bin	620	2
+bin	640	7
+bin	660	3
+bin	680	7
+bin	700	4
+bin	720	3
+bin	740	2
+bin	760	1
+bin	780	2
+bin	800	2
+bin	820	1
+bin	840	2
+bin	860	0
+bin	880	2
+bin	900	0
+bin	920	1
+bin	940	1
+bin	960	1
+bin	980	2
+bin	1000	2
+bin	1020	0
+bin	1040	0
+bin	1060	1
+bin	1080	1
+bin	1100	1
+bin	1120	1
+bin	1140	0
+bin	1160	0
+bin	1180	0
+bin	1200	0
+bin	1220	0
+bin	1240	0
+bin	1260	0
+bin	1280	0
+bin	1300	0
+bin	1320	1
+bin	1340	0
+bin	1360	0
+bin	1380	1
+bin	1400	0
+statistic AirportControl.sink PrioT_Hist
+field count 73
+field mean 97.315068493151
+field stddev 120.50828426022
+field min 2
+field max 659
+field sum 7104
+field sqrsum 1736928
+bin	-inf	0
+bin	0	6
+bin	10	9
+bin	20	4
+bin	30	4
+bin	40	6
+bin	50	3
+bin	60	3
+bin	70	7
+bin	80	6
+bin	90	3
+bin	100	5
+bin	110	4
+bin	120	0
+bin	130	0
+bin	140	1
+bin	150	1
+bin	160	1
+bin	170	2
+bin	180	0
+bin	190	0
+bin	200	0
+bin	210	2
+bin	220	1
+bin	230	0
+bin	240	0
+bin	250	0
+bin	260	0
+bin	270	1
+bin	280	0
+bin	290	0
+bin	300	0
+bin	310	0
+bin	320	0
+bin	330	0
+bin	340	0
+bin	350	0
+bin	360	0
+bin	370	1
+bin	380	0
+bin	390	0
+bin	400	1
+bin	410	0
+bin	420	0
+bin	430	0
+bin	440	0
+bin	450	0
+bin	460	0
+bin	470	0
+bin	480	0
+bin	490	0
+bin	500	0
+bin	510	0
+bin	520	0
+bin	530	0
+bin	540	0
+bin	550	0
+bin	560	0
+bin	570	0
+bin	580	0
+bin	590	0
+bin	600	0
+bin	610	0
+bin	620	1
+bin	630	0
+bin	640	0
+bin	650	1
+bin	660	0
+bin	670	0
+bin	680	0
+bin	690	0
+bin	700	0
+bin	710	0
+bin	720	0
+bin	730	0
+bin	740	0
+bin	750	0
+bin	760	0
+bin	770	0
+bin	780	0
+bin	790	0
+bin	800	0
+bin	810	0
+bin	820	0
+bin	830	0
+statistic AirportControl.sink PCF_Hist
+field count 1110
+field mean 220.33153153153
+field stddev 199.86458444601
+field min 0
+field max 1388
+field sum 244568
+field sqrsum 98185992
+bin	-inf	0
+bin	0	90
+bin	20	70
+bin	40	79
+bin	60	65
+bin	80	70
+bin	100	51
+bin	120	58
+bin	140	48
+bin	160	43
+bin	180	53
+bin	200	48
+bin	220	46
+bin	240	29
+bin	260	40
+bin	280	32
+bin	300	23
+bin	320	28
+bin	340	29
+bin	360	25
+bin	380	13
+bin	400	11
+bin	420	19
+bin	440	10
+bin	460	14
+bin	480	10
+bin	500	11
+bin	520	12
+bin	540	12
+bin	560	3
+bin	580	8
+bin	600	7
+bin	620	3
+bin	640	8
+bin	660	3
+bin	680	7
+bin	700	4
+bin	720	3
+bin	740	2
+bin	760	1
+bin	780	2
+bin	800	2
+bin	820	1
+bin	840	2
+bin	860	0
+bin	880	2
+bin	900	0
+bin	920	1
+bin	940	1
+bin	960	1
+bin	980	2
+bin	1000	2
+bin	1020	0
+bin	1040	0
+bin	1060	1
+bin	1080	1
+bin	1100	1
+bin	1120	1
+bin	1140	0
+bin	1160	0
+bin	1180	0
+bin	1200	0
+bin	1220	0
+bin	1240	0
+bin	1260	0
+bin	1280	0
+bin	1300	0
+bin	1320	1
+bin	1340	0
+bin	1360	0
+bin	1380	1
+bin	1400	0
+statistic AirportControl.sink PCT_Hist
+field count 70
+field mean 66.014285714286
+field stddev 66.694521613477
+field min 1
+field max 406
+field sum 4621
+field sqrsum 611975
+bin	-inf	0
+bin	0	8
+bin	10	10
+bin	20	5
+bin	30	5
+bin	40	7
+bin	50	4
+bin	60	4
+bin	70	7
+bin	80	3
+bin	90	2
+bin	100	4
+bin	110	4
+bin	120	0
+bin	130	0
+bin	140	1
+bin	150	2
+bin	160	0
+bin	170	1
+bin	180	0
+bin	190	0
+bin	200	0
+bin	210	0
+bin	220	1
+bin	230	0
+bin	240	0
+bin	250	0
+bin	260	0
+bin	270	1
+bin	280	0
+bin	290	0
+bin	300	0
+bin	310	0
+bin	320	0
+bin	330	0
+bin	340	0
+bin	350	0
+bin	360	0
+bin	370	0
+bin	380	0
+bin	390	0
+bin	400	1
+bin	410	0
+bin	420	0
+bin	430	0
+bin	440	0
+bin	450	0
+bin	460	0
+bin	470	0
+bin	480	0
+bin	490	0
+bin	500	0
+bin	510	0
+statistic AirportControl.sink Overall_Hist
+field count 1180
+field mean 211.17711864407
+field stddev 197.90024127841
+field min 0
+field max 1388
+field sum 249189
+field sqrsum 98797967
+bin	-inf	0
+bin	0	108
+bin	20	80
+bin	40	90
+bin	60	76
+bin	80	75
+bin	100	59
+bin	120	58
+bin	140	51
+bin	160	44
+bin	180	53
+bin	200	48
+bin	220	47
+bin	240	29
+bin	260	41
+bin	280	32
+bin	300	23
+bin	320	28
+bin	340	29
+bin	360	25
+bin	380	13
+bin	400	12
+bin	420	19
+bin	440	10
+bin	460	14
+bin	480	10
+bin	500	11
+bin	520	12
+bin	540	12
+bin	560	3
+bin	580	8
+bin	600	7
+bin	620	3
+bin	640	8
+bin	660	3
+bin	680	7
+bin	700	4
+bin	720	3
+bin	740	2
+bin	760	1
+bin	780	2
+bin	800	2
+bin	820	1
+bin	840	2
+bin	860	0
+bin	880	2
+bin	900	0
+bin	920	1
+bin	940	1
+bin	960	1
+bin	980	2
+bin	1000	2
+bin	1020	0
+bin	1040	0
+bin	1060	1
+bin	1080	1
+bin	1100	1
+bin	1120	1
+bin	1140	0
+bin	1160	0
+bin	1180	0
+bin	1200	0
+bin	1220	0
+bin	1240	0
+bin	1260	0
+bin	1280	0
+bin	1300	0
+bin	1320	1
+bin	1340	0
+bin	1360	0
+bin	1380	1
+bin	1400	0
+scalar AirportControl.sink generation:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the generation of the arrived jobs, mean"
+scalar AirportControl.sink generation:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the generation of the arrived jobs, max"
+scalar AirportControl.sink delaysVisited:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of delays visited by arrived jobs, mean"
+scalar AirportControl.sink delaysVisited:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of delays visited by arrived jobs, max"
+scalar AirportControl.sink queuesVisited:mean 2.4542372881356
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of queues visited by arrived jobs, mean"
+scalar AirportControl.sink queuesVisited:max 4
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of queues visited by arrived jobs, max"
+scalar AirportControl.sink totalServiceTime:mean 477.50169491525
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent  by arrived jobs, mean"
+attr unit s
+scalar AirportControl.sink totalServiceTime:max 3022
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent  by arrived jobs, max"
+attr unit s
+scalar AirportControl.sink totalDelayTime:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in delay nodes by arrived jobs, mean"
+attr unit s
+scalar AirportControl.sink totalDelayTime:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in delay nodes by arrived jobs, max"
+attr unit s
+scalar AirportControl.sink totalQueueingTime:mean 6691.8940677966
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in queues by arrived jobs, mean"
+attr unit s
+scalar AirportControl.sink totalQueueingTime:max 15895
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in queues by arrived jobs, max"
+attr unit s
+scalar AirportControl.sink lifeTime:mean 7169.3957627119
+attr interpolationmode none
+attr recordingmode mean
+attr title "lifetime of arrived jobs, mean"
+attr unit s
+scalar AirportControl.sink lifeTime:max 16479
+attr interpolationmode none
+attr recordingmode max
+attr title "lifetime of arrived jobs, max"
+attr unit s
+par AirportControl.PrioF_PQ typename "\"org.omnetpp.queueing.PassiveQueue\""
+par AirportControl.PrioF_PQ capacity -1
+par AirportControl.PrioF_PQ fifo true
+par AirportControl.PrioF_PQ sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar AirportControl.PrioF_PQ queueingTime:mean 7223.1518418688
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar AirportControl.PrioF_PQ queueingTime:max 15802
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar AirportControl.PrioF_PQ queueLength:timeavg 115.29990740741
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar AirportControl.PrioF_PQ queueLength:max 250
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar AirportControl.PrioF_PQ dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par AirportControl.PrioF_Server0 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioF_Server0 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioF_Server0 serviceTime exponential(5min)
+attr unit s
+scalar AirportControl.PrioF_Server0 busy:timeavg 0.99979166666667
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioF_Server3 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioF_Server3 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioF_Server3 serviceTime exponential(5min)
+attr unit s
+scalar AirportControl.PrioF_Server3 busy:timeavg 0.99777777777778
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioF_Server2 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioF_Server2 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioF_Server2 serviceTime exponential(5min)
+attr unit s
+scalar AirportControl.PrioF_Server2 busy:timeavg 0.99917824074074
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioF_Server1 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioF_Server1 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioF_Server1 serviceTime exponential(5min)
+attr unit s
+scalar AirportControl.PrioF_Server1 busy:timeavg 1
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioT_PQ typename "\"org.omnetpp.queueing.PassiveQueue\""
+par AirportControl.PrioT_PQ capacity -1
+par AirportControl.PrioT_PQ fifo true
+par AirportControl.PrioT_PQ sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar AirportControl.PrioT_PQ queueingTime:mean 254.06666666667
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar AirportControl.PrioT_PQ queueingTime:max 924
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar AirportControl.PrioT_PQ queueLength:timeavg 0.044108796296296
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar AirportControl.PrioT_PQ queueLength:max 1
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar AirportControl.PrioT_PQ dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par AirportControl.NoPC_PQ typename "\"org.omnetpp.queueing.PassiveQueue\""
+par AirportControl.NoPC_PQ capacity -1
+par AirportControl.NoPC_PQ fifo true
+par AirportControl.NoPC_PQ sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar AirportControl.NoPC_PQ queueingTime:mean 121.57313432836
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar AirportControl.NoPC_PQ queueingTime:max 420
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar AirportControl.NoPC_PQ queueLength:timeavg 0.48130787037037
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar AirportControl.NoPC_PQ queueLength:max 8
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar AirportControl.NoPC_PQ dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par AirportControl.NoPC_Server0 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.NoPC_Server0 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.NoPC_Server0 serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.NoPC_Server0 busy:timeavg 0.76633101851852
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.NoPC_Server3 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.NoPC_Server3 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.NoPC_Server3 serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.NoPC_Server3 busy:timeavg 0.43630787037037
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.NoPC_Server2 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.NoPC_Server2 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.NoPC_Server2 serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.NoPC_Server2 busy:timeavg 0.53570601851852
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.NoPC_Server1 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.NoPC_Server1 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.NoPC_Server1 serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.NoPC_Server1 busy:timeavg 0.6408912037037
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PC_PQ typename "\"org.omnetpp.queueing.PassiveQueue\""
+par AirportControl.PC_PQ capacity -1
+par AirportControl.PC_PQ fifo true
+par AirportControl.PC_PQ sendingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,minDelay
+scalar AirportControl.PC_PQ queueingTime:mean nan
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar AirportControl.PC_PQ queueingTime:max nan
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar AirportControl.PC_PQ queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar AirportControl.PC_PQ queueLength:max 0
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar AirportControl.PC_PQ dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par AirportControl.PC_Server0 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PC_Server0 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PC_Server0 serviceTime exponential(1min)
+attr unit s
+scalar AirportControl.PC_Server0 busy:timeavg 0.052291666666667
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PC_Server1 typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PC_Server1 fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PC_Server1 serviceTime exponential(1min)
+attr unit s
+scalar AirportControl.PC_Server1 busy:timeavg 0.0011921296296296
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl.PrioT_Server typename "\"org.omnetpp.queueing.Server\""
+par AirportControl.PrioT_Server fetchingAlgorithm "\"priority\""
+attr enum priority,random,roundRobin,longestQueue
+par AirportControl.PrioT_Server serviceTime exponential(3min)
+attr unit s
+scalar AirportControl.PrioT_Server busy:timeavg 0.15149305555556
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "server busy state, timeavg"
+par AirportControl typename "\"AirportControl\""
+

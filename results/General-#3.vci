@@ -1,0 +1,86 @@
+file 79653 1715573681                                           
+version 3
+run General-3-20240513-00:14:38-20028
+attr configname General
+attr datetime 20240513-00:14:38
+attr datetimef 20240513-001438
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network AirportControl
+attr processid 20028
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+config network AirportControl
+config repeat 10
+config simtime-resolution s
+config sim-time-limit 1440min
+config **.PrioT_PCT.jobType 0
+config **.PrioT_PCF.jobType 1
+config **.PrioF_PCT.jobType 2
+config **.PrioF_PCF.jobType 3
+config **.PrioT_PCT.probArrival 0.04
+config **.PrioT_PCF.probArrival 0.01
+config **.PrioF_PCT.probArrival 0.01
+config **.PrioF_PCF.probArrival 0.94
+config **.PrioT_PCT.interarrivalRateRush 0.4min
+config **.PrioT_PCF.interarrivalRateRush 0.4min
+config **.PrioF_PCT.interarrivalRateRush 0.4min
+config **.PrioF_PCF.interarrivalRateRush 0.4min
+config **.PrioF_PCF.interarrivalRateNormal 1min
+config **.PrioT_PCT.interarrivalRateNormal 1min
+config **.PrioF_PCT.interarrivalRateNormal 1min
+config **.PrioT_PCF.interarrivalRateNormal 1min
+config **.PrioF_PCF.numberOfPeaks 4
+config **.PrioF_PCT.numberOfPeaks 4
+config **.PrioT_PCF.numberOfPeaks 4
+config **.PrioT_PCT.numberOfPeaks 4
+config **.PrioF_PCF.durationOfPeaks 150min
+config **.PrioF_PCT.durationOfPeaks 150min
+config **.PrioT_PCF.durationOfPeaks 150min
+config **.PrioT_PCT.durationOfPeaks 150min
+config **.PrioT_Server.serviceTime exponential(3min)
+config **.PrioF_Server3.serviceTime exponential(5min)
+config **.PrioF_Server2.serviceTime exponential(5min)
+config **.PrioF_Server1.serviceTime exponential(5min)
+config **.PrioF_Server0.serviceTime exponential(5min)
+config **.NoPC_Server0.serviceTime exponential(3min)
+config **.NoPC_Server3.serviceTime exponential(3min)
+config **.NoPC_Server2.serviceTime exponential(3min)
+config **.NoPC_Server1.serviceTime exponential(3min)
+config **.PC_Server0.serviceTime exponential(1min)
+config **.PC_Server1.serviceTime exponential(1min)
+
+vector 0 AirportControl.PrioF_PQ queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 AirportControl.PrioT_PQ queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 AirportControl.NoPC_PQ queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 3 AirportControl.PC_PQ queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 4 AirportControl.sink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+0	2871 42597 0 11412 0 86370 2467 0 216 232877 30554649
+1	45468 478 0 11166 0 84123 31 0 1 15 15
+2	45946 10528 0 11395 0 86111 659 0 12 1637 8729
+3	56474 9 0 0 0 0 1 0 0 0 0
+4	56483 23168 23 11418 132 86375 1219 9 14332 7197980 60995016580
+

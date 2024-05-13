@@ -3,14 +3,22 @@ import ned.IdealChannel;
 import org.omnetpp.queueing.Sink;
 import org.omnetpp.queueing.Queue;
 import org.omnetpp.queueing.Server;
-import org.omnetpp.queueing.Source;
 import org.omnetpp.queueing.Classifier;
 import org.omnetpp.queueing.Router;
 import org.omnetpp.queueing.PassiveQueue;
 
-simple MySourceExt extends Source
+simple Source
 {
-    @class(MySourceExt);
+    parameters:
+        int jobType;
+        double probArrival;
+        double interarrivalRateRush @unit(s); //Send in seconds
+        double interarrivalRateNormal @unit(s); //Send in seconds
+        int numberOfPeaks;
+        double durationOfPeaks @unit(s); //Send in seconds
+        @display("i=block/source");
+    gates:
+        output out;
 }
 
 simple MySinkExt extends Sink
@@ -67,23 +75,23 @@ network AirportControl
 {
     @display("bgb=2024.9413,989.8325");
     submodules:
-        PrioT_PCT: MySourceExt {
+        PrioT_PCT: Source {
             @display("p=273.00003,207.00002");
         }
-        PrioT_PCF: MySourceExt {
+        PrioT_PCF: Source {
             @display("p=273.00003,306.00003");
         }
-        PrioF_PCT: MySourceExt {
+        PrioF_PCT: Source {
             @display("p=273.00003,493.50003");
         }
-        PrioF_PCF: MySourceExt {
+        PrioF_PCF: Source {
             @display("p=273.00003,591.00006");
         }
         Precheck_Classifier: Classifier {
             @display("p=892.50006,450.00003;is=l");
         }
         sink: MySinkExt {
-            @display("p=1618.5001,492.00003");
+            @display("p=1437.0001,493.50003");
         }
         PrioF_PQ: PassiveQueue {
             @display("p=441.00003,532.50006");
@@ -104,62 +112,70 @@ network AirportControl
             @display("p=472.50003,244.50002");
         }
         NoPC_PQ: PassiveQueue {
-            @display("p=1237.5001,601.50006");
+            @display("p=1056.0001,603.00006");
         }
         NoPC_Server0: Server {
-            @display("p=1375.5001,450.00003");
+            @display("p=1194.0001,451.50003");
         }
         NoPC_Server3: Server {
-            @display("p=1375.5001,799.50006");
+            @display("p=1194.0001,801.00006");
         }
         NoPC_Server2: Server {
-            @display("p=1375.5001,684.00006");
+            @display("p=1194.0001,685.50006");
         }
         NoPC_Server1: Server {
-            @display("p=1375.5001,567.00006");
+            @display("p=1194.0001,568.50006");
         }
         PC_PQ: PassiveQueue {
-            @display("p=1237.5001,243.00002");
+            @display("p=1056.0001,244.50002");
         }
         PC_Server0: Server {
-            @display("p=1375.5001,187.50002");
+            @display("p=1194.0001,189.00002");
         }
         PC_Server1: Server {
-            @display("p=1375.5001,304.50003");
+            @display("p=1194.0001,306.00003");
         }
         PrioT_Server: Server {
             @display("p=630.00006,244.50002");
         }
     connections:
         PrioT_PQ.out++ --> PrioT_Server.in++;
+
         PrioT_Server.out --> Precheck_Classifier.in++;
         PrioF_Server0.out --> Precheck_Classifier.in++;
         PrioF_Server2.out --> Precheck_Classifier.in++;
         PrioF_Server1.out --> Precheck_Classifier.in++;
         PrioF_Server3.out --> Precheck_Classifier.in++;
+
         Precheck_Classifier.out++ --> PC_PQ.in++; // JobType = 0, Online Check-In, TSA Precheck
         Precheck_Classifier.out++ --> NoPC_PQ.in++; // JobType = 1, Online Check-In, No Precheck
         Precheck_Classifier.out++ --> PC_PQ.in++; // JobType = 2, Manual Check-In, TSA Precheck
-		Precheck_Classifier.rest --> NoPC_PQ.in++; // rest = 4, Manual Check-In, No Precheck (Most Common)
+        Precheck_Classifier.rest --> NoPC_PQ.in++; // rest = 4, Manual Check-In, No Precheck (Most Common)
+
         PrioT_PCT.out --> PrioT_PQ.in++;
         PrioT_PCF.out --> PrioT_PQ.in++;
         PrioF_PCT.out --> PrioF_PQ.in++;
         PrioF_PCF.out --> PrioF_PQ.in++;
+
         NoPC_PQ.out++ --> NoPC_Server0.in++;
         NoPC_PQ.out++ --> NoPC_Server1.in++;
         NoPC_PQ.out++ --> NoPC_Server2.in++;
         NoPC_PQ.out++ --> NoPC_Server3.in++;
+
         PrioF_PQ.out++ --> PrioF_Server1.in++;
         PrioF_PQ.out++ --> PrioF_Server0.in++;
         PrioF_PQ.out++ --> PrioF_Server2.in++;
         PrioF_PQ.out++ --> PrioF_Server3.in++;
+
         PC_PQ.out++ --> PC_Server0.in++;
         PC_PQ.out++ --> PC_Server1.in++;
+
         PC_Server0.out --> sink.in++;
         PC_Server1.out --> sink.in++;
+
         NoPC_Server0.out --> sink.in++;
         NoPC_Server1.out --> sink.in++;
         NoPC_Server2.out --> sink.in++;
         NoPC_Server3.out --> sink.in++;
-        
+
 }
