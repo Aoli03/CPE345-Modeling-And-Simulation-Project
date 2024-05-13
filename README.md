@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 # CPE 345 -- Modeling and Simulation Project
 ## Demonstrating the Impact of Accelerated Check In on Queue Times
 
-## Current Model (22:20, 5/9/2024)
-![image](https://github.com/Aoli03/CPE345-Modeling-And-Simulation-Project/assets/82727581/f193dc42-ae38-494a-94d6-fd5faf8649e9)
-=======
-# _**BOYS MAKE THIS IN YOUR SAMPLES SO YOU CAN EXTEND THE QUEUEING LIBS**_
-# CPE 345 -- Modeling and Simulation Project
-## Demonstrating the Impact of Accelerated Check In on Queue Times
+### _**MAKE THIS IN YOUR SAMPLES SO YOU CAN EXTEND THE QUEUEING LIBS**_
+## Final Model
+![image](https://github.com/Aoli03/CPE345-Modeling-And-Simulation-Project/assets/82727581/bdf49c80-c4b4-4364-ab8e-2c403218c5fb)
 
-## Current Model (22:20, 5/9/2024)
-![image](https://github.com/Aoli03/CPE345-Modeling-And-Simulation-Project/assets/82727581/f193dc42-ae38-494a-94d6-fd5faf8649e9)
->>>>>>> 5c377ea6c8589ef1e8d979d8ddb0f57fe30ec16a
